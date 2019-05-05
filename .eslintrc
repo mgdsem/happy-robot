@@ -1,0 +1,73 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 8
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ],
+        "import/prefer-default-export": 0,
+        "jsx-a11y/anchor-is-valid": 0,
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "**/test.js",
+                    "**/*.spec.js"
+                ]
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.spec.js"
+            ],
+            "globals": {
+                "mount": true,
+                "shallow": true,
+                "render": true,
+                "mountWithIntl": true,
+                "shallowWithIntl": true,
+                "renderWithIntl": true,
+                "loadTranslationObject": true
+            },
+            "rules": {
+                "react/react-in-jsx-scope": 0,
+                "react/jsx-closing-tag-location": 0
+            }
+        }
+    ],
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack.config.js"
+            }
+        }
+    }
+}
