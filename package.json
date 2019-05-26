@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
   "devDependencies": {
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
@@ -23,11 +26,14 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "inline-svg-react": "^0.2.0",
     "prop-types": "^15.7.2",
+    "raw-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0",

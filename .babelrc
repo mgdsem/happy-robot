@@ -1,22 +1,18 @@
 {
-    "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-    ],
-    "env": {
-        "test": {
-            "plugins": [
-                "transform-es2015-modules-commonjs"
-            ]
-        }
-    },
-    "plugins": [
-        "transform-object-rest-spread",
-        [
-            "transform-class-properties",
-            {
-                "spec": true
-            }
-        ]
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  },
+  "plugins": [
+    "babel-plugin-styled-components",
+    "transform-object-rest-spread",
+    [
+      "transform-class-properties",
+      {
+        "spec": true
+      }
     ]
+  ]
 }
