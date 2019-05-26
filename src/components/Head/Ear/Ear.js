@@ -1,9 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { flexCenter, resetButton } from 'styles/mixins';
 import colors from 'styles/colors';
+
+import Wave from './Wave/Wave';
 
 const EarWrapper = styled.div`
   ${flexCenter};
@@ -45,58 +47,9 @@ const Circle = styled.button`
   }
 `;
 
-const WavesWrapper = styled.div`
-  position: relative;
-  width: 15rem;
-  height: 20rem;
-
-  transform: ${({ isRight }) => isRight && 'rotateY(180deg)'};
-`;
-
-const Wave = styled.div`
-  position: absolute;
-  top: 50%;
-  right: -3rem;
-  width: 10rem;
-  height: 3rem;
-  opacity: 0;
-  border-bottom: 0.5rem solid #222;
-  border-radius: 0 0 50px 50px / 0 0 20px 20px;
-  transform: translateY(-50%) rotateZ(90deg);
-
-  ${({ isEarWaving }) =>
-    isEarWaving &&
-    css`
-      animation: waving 2s linear;
-      animation-delay: ${({ animationDelay }) => animationDelay};
-      animation-iteration-count: 3;
-    `};
-
-  @keyframes waving {
-    0% {
-      right: -3rem;
-      opacity: 1;
-      transform: translateY(-50%) rotateZ(90deg) scale(0.8);
-    }
-    100% {
-      right: 9rem;
-      opacity: 0;
-      transform: translateY(-50%) rotateZ(90deg) scale(1.5);
-    }
-  }
-`;
-
 export const LeftEar = ({ isEarWaving, setIsEarWaving }) => (
   <EarWrapper>
-    <WavesWrapper>
-      <Wave isEarWaving={isEarWaving} />
-      <Wave isEarWaving={isEarWaving} animationDelay="1s" />
-      <Wave
-        isEarWaving={isEarWaving}
-        animationDelay="2s"
-        onAnimationEnd={() => setIsEarWaving(false)}
-      />
-    </WavesWrapper>
+    <Wave isEarWaving={isEarWaving} setIsEarWaving={setIsEarWaving} />
     <Circle disabled={isEarWaving} onClick={() => setIsEarWaving(true)} />
     <TriangleLeft />
     <Rectangle />
@@ -113,15 +66,7 @@ export const RightEar = ({ isEarWaving, setIsEarWaving }) => (
     <Rectangle />
     <TriangleRight />
     <Circle disabled={isEarWaving} onClick={() => setIsEarWaving(true)} />
-    <WavesWrapper isRight>
-      <Wave isEarWaving={isEarWaving} />
-      <Wave isEarWaving={isEarWaving} animationDelay="1s" />
-      <Wave
-        isEarWaving={isEarWaving}
-        animationDelay="2s"
-        onAnimationEnd={() => setIsEarWaving(false)}
-      />
-    </WavesWrapper>
+    <Wave isRight isEarWaving={isEarWaving} setIsEarWaving={setIsEarWaving} />
   </EarWrapper>
 );
 

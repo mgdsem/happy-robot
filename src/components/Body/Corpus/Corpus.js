@@ -1,5 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+// TODO: create corpus
 
-import { flexCenter } from 'styles/mixins';
-import colors from 'styles/colors';
+// import React from 'react';
+// import styled from 'styled-components';
+
+// import { flexCenter } from 'styles/mixins';
+// import colors from 'styles/colors';

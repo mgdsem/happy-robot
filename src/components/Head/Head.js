@@ -19,7 +19,6 @@ import Neck from './Neck/Neck';
 
 const Head = () => {
   const [isEarWaving, setIsEarWaving] = useState(false);
-  console.log(isEarWaving);
 
   return (
     <div>

@@ -1,3 +1,5 @@
+// TODO: remove if no svg will be used
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import InlineSVG from 'inline-svg-react';

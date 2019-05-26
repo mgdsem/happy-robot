@@ -34,7 +34,9 @@ const Eyes = () => (
     <Round>
       <MiniRound />
     </Round>
+
     <Space />
+
     <Round>
       <MiniRound />
     </Round>

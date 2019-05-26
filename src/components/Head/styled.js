@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { flexCenter } from 'styles/mixins';
 import colors from 'styles/colors';
 
+// TODO: make refactor later if needed
+
 export const HeadWrapper = styled.div`
   ${flexCenter};
 `;

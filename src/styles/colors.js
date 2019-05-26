@@ -9,4 +9,5 @@ export default {
   black: '#000',
   darkGray: '#5f6060',
   warmGrey: '#c6c6c4',
+  grey: '#222',
 };
