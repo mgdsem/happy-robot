@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { flexCenter } from 'styles/mixins';
 import colors from 'styles/colors';
@@ -12,11 +13,26 @@ const Round = styled.div`
   background-color: ${colors.white};
 `;
 
+const eyesAnimation = keyframes`
+  0% {
+    background-color: ${colors.black};
+  }
+  100% {
+    background-color: ${colors.red};
+  }
+`;
+
 const MiniRound = styled.div`
   width: 2rem;
   height: 2rem;
   background-color: ${colors.black};
   border-radius: 50%;
+
+  ${({ isEarWaving }) =>
+    isEarWaving &&
+    css`
+      animation: ${eyesAnimation} 0.7s infinite alternate;
+    `};
 `;
 
 const Space = styled.div`
@@ -29,18 +45,22 @@ const RoundWrapper = styled.div`
   ${flexCenter};
 `;
 
-const Eyes = () => (
+const Eyes = ({ isEarWaving }) => (
   <RoundWrapper>
     <Round>
-      <MiniRound />
+      <MiniRound isEarWaving={isEarWaving} />
     </Round>
 
     <Space />
 
     <Round>
-      <MiniRound />
+      <MiniRound isEarWaving={isEarWaving} />
     </Round>
   </RoundWrapper>
 );
+
+Eyes.propTypes = {
+  isEarWaving: PropTypes.bool.isRequired,
+};
 
 export default Eyes;

@@ -1,13 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Head from './Head/Head';
 import Body from './Body/Body';
 
+const RobotWrapper = styled.div`
+  display: block;
+`;
+
 const Robot = () => (
-  <div>
+  <RobotWrapper>
     <Head />
     <Body />
-  </div>
+  </RobotWrapper>
 );
 
 export default Robot;
