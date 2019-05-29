@@ -18,7 +18,7 @@ const eyesAnimation = keyframes`
     background-color: ${colors.black};
   }
   100% {
-    background-color: ${colors.red};
+    background-color: ${colors.eyeGreen};
   }
 `;
 
