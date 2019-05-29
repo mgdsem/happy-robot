@@ -10,4 +10,7 @@ export default {
   darkGray: '#5f6060',
   warmGrey: '#c6c6c4',
   grey: '#222',
+  eyeGreen: '#42f4aa',
+  nosePink: '#f442d1',
+  noseBlue: '#0563fc',
 };

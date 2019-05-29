@@ -33,7 +33,7 @@ const Head = () => {
 
         <HeadBase>
           <EyesWrapper>
-            <Eyes />
+            <Eyes isEarWaving={isEarWaving} />
           </EyesWrapper>
           <NoseWrapper>
             <Nose />
