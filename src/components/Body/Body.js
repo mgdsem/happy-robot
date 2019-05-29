@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Body = () => <div />;
+import Corpus from './Corpus/Corpus';
+
+const Body = () => <Corpus />;
 
 export default Body;

@@ -1,7 +1,14 @@
-// TODO: create corpus
+import React from 'react';
 
-// import React from 'react';
-// import styled from 'styled-components';
+import { CorpusWrapper, CorpusStyled } from './styled';
+import Arm from './Arm/Arm';
 
-// import { flexCenter } from 'styles/mixins';
-// import colors from 'styles/colors';
+const Corpus = () => (
+  <CorpusWrapper>
+    <Arm isLeft />
+    <CorpusStyled />
+    <Arm />
+  </CorpusWrapper>
+);
+
+export default Corpus;
