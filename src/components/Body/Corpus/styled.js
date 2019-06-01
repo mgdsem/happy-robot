@@ -12,4 +12,5 @@ export const CorpusStyled = styled.div`
   height: 30rem;
   background-color: ${colors.pink};
   border-radius: 8%;
+  border: 0.5rem double ${colors.black};
 `;
