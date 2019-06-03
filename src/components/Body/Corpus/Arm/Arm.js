@@ -43,6 +43,18 @@ const ArmRound = styled.div`
   border-radius: 50%;
   background-color: ${colors.darkGray};
 `;
+
+const ArmJib = styled.div`
+  width: 0.5rem;
+  height: 5rem;
+  background-color: ${colors.black};
+  /* transform: ${({ isLeft }) =>
+    isLeft
+      ? 'rotateZ(-40deg) translate(2rem, -0.3rem)'
+      : 'rotateZ(40deg) translate(-2rem, -0.3rem)'}; */
+      display: none;
+`;
+
 const ArmMoon = styled.button`
   ${resetButton};
   width: 3rem;
@@ -50,16 +62,28 @@ const ArmMoon = styled.button`
   border: 0.5rem solid ${colors.grey};
   border-top: 0;
   border-radius: 0 0 120px 120px / 0 0 90px 90px;
-  transform: ${({ isLeft }) =>
+  /* transform: ${({ isLeft }) =>
     isLeft
       ? 'rotateZ(-40deg) translate(2rem, -0.3rem)'
-      : 'rotateZ(40deg) translate(-2rem, -0.3rem)'};
+      : 'rotateZ(40deg) translate(-2rem, -0.3rem)'}; */
+`;
+
+const ArmInnerWrapper = styled.div`
+  ${flexCenter};
+  flex-direction: column;
+  transform: ${({ isLeft }) =>
+    isLeft
+      ? 'rotateZ(-40deg) translate(0.5rem, -3.3rem)'
+      : 'rotateZ(40deg) translate(-0.5rem, -3.3rem)'};
 `;
 
 const Arm = ({ isLeft }) => (
   <ArmWrapper>
-    {isLeft && <ArmMoon isLeft />}
-    {isLeft && <ArmRound />}
+    <ArmInnerWrapper isLeft>
+      {isLeft && <ArmMoon isLeft />}
+      {isLeft && <ArmJib isLeft />}
+      {isLeft && <ArmRound />}
+    </ArmInnerWrapper>
     <ArmPartsWrapper isLeft={isLeft}>
       <ArmPart />
       <ArmPart />
@@ -70,8 +94,11 @@ const Arm = ({ isLeft }) => (
       <ArmPart />
       <ArmPart isLast />
     </ArmPartsWrapper>
-    {!isLeft && <ArmRound />}
-    {!isLeft && <ArmMoon />}
+    <ArmInnerWrapper>
+      {!isLeft && <ArmMoon />}
+      {!isLeft && <ArmJib />}
+      {!isLeft && <ArmRound />}
+    </ArmInnerWrapper>
   </ArmWrapper>
 );
 
@@ -84,3 +111,8 @@ Arm.defaultProps = {
 };
 
 export default Arm;
+
+// transform: ${({ isLeft }) =>
+//     isLeft
+//       ? 'rotateZ(-40deg) translate(0.5rem, -3.3rem)'
+//       : 'rotateZ(40deg) translate(-0.5rem, -3.3rem)'};
