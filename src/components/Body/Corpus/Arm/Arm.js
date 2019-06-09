@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { ArmWrapper, ArmPartsWrapper, ArmPart, ArmRound, ArmJib, ArmMoon, Palm } from './styled';
+import {
+  ArmWrapper,
+  ArmPartsWrapper,
+  ArmPart,
+  ArmRound,
+  ArmJib,
+  ArmMoon,
+  Palm,
+  JibMoonWrapper,
+} from './styled';
 
 const Arm = ({ isLeft }) => {
   const [isPalmActive, setIsPalmActive] = useState(false);
@@ -23,8 +32,10 @@ const Arm = ({ isLeft }) => {
 
       <Palm>
         <ArmRound onClick={() => setIsPalmActive(!isPalmActive)} />
-        <ArmJib />
-        <ArmMoon />
+        <JibMoonWrapper>
+          <ArmJib isPalmActive={isPalmActive} />
+          <ArmMoon isPalmActive={isPalmActive} />
+        </JibMoonWrapper>
       </Palm>
     </ArmWrapper>
   );

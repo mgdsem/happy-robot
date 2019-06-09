@@ -41,15 +41,20 @@ export const ArmRound = styled.button`
   background-color: ${colors.darkGray};
 `;
 
+export const JibMoonWrapper = styled.div`
+  ${flexCenter};
+  transform: rotateZ(-40deg);
+  transform-origin: -10% 50%;
+  height: 4rem;
+  overflow-x: hidden;
+`;
+
 export const ArmJib = styled.div`
-  width: 0.5rem;
-  height: 5rem;
+  width: 5rem;
+  height: 0.5rem;
   background-color: ${colors.black};
-  /* transform: ${({ isLeft }) =>
-    isLeft
-      ? 'rotateZ(-40deg) translate(2rem, -0.3rem)'
-      : 'rotateZ(40deg) translate(-2rem, -0.3rem)'}; */
-      display: none;
+  transform: ${({ isPalmActive }) => !isPalmActive && 'translateX(-5rem)'};
+  transition: transform 1.5s linear;
 `;
 
 export const ArmMoon = styled.button`
@@ -59,18 +64,12 @@ export const ArmMoon = styled.button`
   border: 0.5rem solid ${colors.grey};
   border-top: 0;
   border-radius: 0 0 120px 120px / 0 0 90px 90px;
-  /* transform: ${({ isLeft }) =>
-    isLeft
-      ? 'rotateZ(-40deg) translate(2rem, -0.3rem)'
-      : 'rotateZ(40deg) translate(-2rem, -0.3rem)'}; */
-      transform: rotateZ(40deg) translate(-2rem, -0.3rem);
+  transition: transform 1.5s linear;
+  transform: rotateZ(90deg) translateY(0.5rem);
+  transform: ${({ isPalmActive }) =>
+    isPalmActive ? 'rotateZ(90deg) translateY(0.5rem)' : 'rotateZ(90deg) translateY(5.5rem)'};
 `;
 
 export const Palm = styled.div`
   ${flexCenter};
-  /* flex-direction: column; */
-  /* transform: ${({ isLeft }) => (isLeft ? 'rotateZ(-40deg)' : 'rotateZ(40deg) ')}; */
-  /* transform: translateY() */
 `;
-
-// rotateZ(-40deg) translate(0.5rem, -3.3rem)
