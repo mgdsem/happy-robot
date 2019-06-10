@@ -53,7 +53,7 @@ export const ArmJib = styled.div`
   width: 5rem;
   height: 0.5rem;
   background-color: ${colors.black};
-  transform: ${({ isPalmActive }) => !isPalmActive && 'translateX(-5rem)'};
+  transform: ${({ isExpanded }) => !isExpanded && 'translateX(-5rem)'};
   transition: transform 1.5s linear;
 `;
 
@@ -65,9 +65,8 @@ export const ArmMoon = styled.button`
   border-top: 0;
   border-radius: 0 0 120px 120px / 0 0 90px 90px;
   transition: transform 1.5s linear;
-  transform: rotateZ(90deg) translateY(0.5rem);
-  transform: ${({ isPalmActive }) =>
-    isPalmActive ? 'rotateZ(90deg) translateY(0.5rem)' : 'rotateZ(90deg) translateY(5.5rem)'};
+  transform: ${({ isExpanded }) =>
+    isExpanded ? 'rotateZ(90deg) translateY(0.5rem)' : 'rotateZ(90deg) translateY(5.5rem)'};
 `;
 
 export const Palm = styled.div`

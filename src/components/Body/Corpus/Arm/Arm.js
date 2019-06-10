@@ -14,9 +14,24 @@ import {
 } from './styled';
 
 const Arm = ({ isLeft }) => {
-  const [isPalmActive, setIsPalmActive] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
+  const [isPalmRotatable, setIsPalmRotatable] = useState(false);
 
-  console.log(isPalmActive);
+  const allowRotation = () => {
+    if (isExpanded) {
+      setIsPalmRotatable(true);
+    }
+  };
+
+  const toggleIsExpanded = () => {
+    if (isExpanded) {
+      setIsPalmRotatable(false);
+    }
+    setIsExpanded(!isExpanded);
+  };
+
+  console.log(isPalmRotatable);
   return (
     <ArmWrapper isLeft={isLeft}>
       <ArmPartsWrapper>
@@ -31,10 +46,14 @@ const Arm = ({ isLeft }) => {
       </ArmPartsWrapper>
 
       <Palm>
-        <ArmRound onClick={() => setIsPalmActive(!isPalmActive)} />
+        <ArmRound />
         <JibMoonWrapper>
-          <ArmJib isPalmActive={isPalmActive} />
-          <ArmMoon isPalmActive={isPalmActive} />
+          <ArmJib isExpanded={isExpanded} />
+          <ArmMoon
+            isExpanded={isExpanded}
+            onClick={toggleIsExpanded}
+            onTransitionEnd={allowRotation}
+          />
         </JibMoonWrapper>
       </Palm>
     </ArmWrapper>
