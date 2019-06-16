@@ -1,7 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { flexCenter, resetButton } from 'styles/mixins';
 import colors from 'styles/colors';
+
+const rotating = keyframes`
+  0%{
+    transform: rotateZ(-40deg);
+  }
+  100%{
+    transform: rotateZ(40deg);
+  }
+`;
 
 export const ArmWrapper = styled.div`
   ${flexCenter};
@@ -38,7 +47,13 @@ export const ArmRound = styled.button`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: ${colors.darkGray};
+  background-color: ${({ isRotating }) => (isRotating ? colors.black : colors.eyeGreen)};
+  transition: background-color 0.3s ease-in-out;
+
+  &:disabled {
+    background-color: ${colors.darkGray};
+    cursor: default;
+  }
 `;
 
 export const JibMoonWrapper = styled.div`
@@ -47,6 +62,12 @@ export const JibMoonWrapper = styled.div`
   transform-origin: -10% 50%;
   height: 4rem;
   overflow-x: hidden;
+
+  ${({ isRotating }) =>
+    isRotating &&
+    css`
+      animation: ${rotating} 1s 4 alternate ease-in-out;
+    `};
 `;
 
 export const ArmJib = styled.div`

@@ -31,7 +31,6 @@ const Arm = ({ isLeft }) => {
     setIsExpanded(!isExpanded);
   };
 
-  console.log(isPalmRotatable);
   return (
     <ArmWrapper isLeft={isLeft}>
       <ArmPartsWrapper>
@@ -46,8 +45,12 @@ const Arm = ({ isLeft }) => {
       </ArmPartsWrapper>
 
       <Palm>
-        <ArmRound />
-        <JibMoonWrapper>
+        <ArmRound
+          onClick={() => setIsRotating(true)}
+          disabled={!isPalmRotatable}
+          isRotating={isRotating}
+        />
+        <JibMoonWrapper isRotating={isRotating} onAnimationEnd={() => setIsRotating(false)}>
           <ArmJib isExpanded={isExpanded} />
           <ArmMoon
             isExpanded={isExpanded}
