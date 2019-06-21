@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import {
   ArmWrapper,
   ArmPartsWrapper,
-  ArmPart,
   ArmRound,
   ArmJib,
   ArmMoon,
@@ -13,7 +12,9 @@ import {
   JibMoonWrapper,
 } from './styled';
 
-const Arm = ({ isLeft }) => {
+import ArmPart from './ArmPart/ArmPart';
+
+const Arm = ({ isLeft, setBodyColor }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isRotating, setIsRotating] = useState(false);
   const [isPalmRotatable, setIsPalmRotatable] = useState(false);
@@ -34,14 +35,14 @@ const Arm = ({ isLeft }) => {
   return (
     <ArmWrapper isLeft={isLeft}>
       <ArmPartsWrapper>
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
-        <ArmPart />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
+        <ArmPart setBodyColor={setBodyColor} />
       </ArmPartsWrapper>
 
       <Palm>

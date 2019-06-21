@@ -8,10 +8,10 @@ const RobotWrapper = styled.div`
   display: block;
 `;
 
-const Robot = () => (
+const Robot = ({ setBodyColor }) => (
   <RobotWrapper>
     <Head />
-    <Body />
+    <Body setBodyColor={setBodyColor} />
   </RobotWrapper>
 );
 

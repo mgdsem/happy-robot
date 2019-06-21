@@ -3,11 +3,11 @@ import React from 'react';
 import { CorpusWrapper, CorpusStyled } from './styled';
 import Arm from './Arm/Arm';
 
-const Corpus = () => (
+const Corpus = ({ setBodyColor }) => (
   <CorpusWrapper>
-    <Arm isLeft />
+    <Arm isLeft setBodyColor={setBodyColor} />
     <CorpusStyled />
-    <Arm />
+    <Arm setBodyColor={setBodyColor} />
   </CorpusWrapper>
 );
 

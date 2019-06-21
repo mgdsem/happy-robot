@@ -31,16 +31,6 @@ export const ArmPartsWrapper = styled.div`
   box-sizing: content-box;
 `;
 
-export const ArmPart = styled.div`
-  width: 1.5rem;
-  height: 2rem;
-  background-color: ${colors.pink};
-
-  &:not(:last-of-type) {
-    margin-right: 0.5rem;
-  }
-`;
-
 export const ArmRound = styled.button`
   ${resetButton};
 
