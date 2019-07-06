@@ -1,0 +1,6 @@
+4 stany: zly, smutny, radosny, cwaniak
+
+zly: brwi w dol, usmiech w dol  --> oczy swieca na czerwono
+smuty: brwi w gore usmiech w dol  --> oczy swieca na niebiesko
+radosny: brwi w gore usmiech w gore  --> oczy swieca na zielone
+cwaniak: brwi w dol, usmiech w gore  --> oczy swieca na zolto

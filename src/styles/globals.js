@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    background-color: ${({ bodyColor }) => bodyColor};
+  }
+
   html {
     font-size: 62.5%;
   }

@@ -8,7 +8,7 @@ import Line from './Line/Line';
 const LineWrapper = styled.div`
   ${flexCenter};
   justify-content: space-between;
-  width: 20rem;
+  width: 25rem;
   margin-top: 7rem;
   padding: 0 2.5rem;
 `;
