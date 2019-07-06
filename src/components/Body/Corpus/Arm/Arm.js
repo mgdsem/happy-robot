@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import PropTypes from 'prop-types';
 
 import {
@@ -66,6 +65,7 @@ const Arm = ({ isLeft, setBodyColor }) => {
 
 Arm.propTypes = {
   isLeft: PropTypes.bool,
+  setBodyColor: PropTypes.func.isRequired,
 };
 
 Arm.defaultProps = {

@@ -9,10 +9,7 @@ const Leg = () => {
   const setRotations = () => {
     setIsRotating(true);
     setIsLeftClicked(true);
-    console.log('dziala');
   };
-
-  console.log({ isRotating, isLeftClicked });
 
   const resetRotations = () => {
     setIsRotating(false);

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { flexCenter } from 'styles/mixins';
-import colors from 'styles/colors';
 
-import Corpus from './Corpus/Corpus';
+import Corpus from './Corpus/Panel/Corpus/Corpus';
 import Legs from './Corpus/Legs/Legs';
 
 const BodyLegsWrapper = styled.div`
@@ -20,5 +20,7 @@ const Body = ({ setBodyColor }) => (
     </BodyLegsWrapper>
   </div>
 );
+
+Body.propTypes = { setBodyColor: PropTypes.func.isRequired };
 
 export default Body;

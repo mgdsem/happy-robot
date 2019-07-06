@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import colors from 'styles/colors';
@@ -26,5 +27,7 @@ const ArmPart = ({ setBodyColor }) => {
 
   return <ArmPartStyled color={color} onClick={() => setBodyColor(color)} />;
 };
+
+ArmPart.propTypes = { setBodyColor: PropTypes.func.isRequired };
 
 export default ArmPart;

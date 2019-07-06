@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import colors from 'styles/colors';
 import { resetButton } from 'styles/mixins';
+import { flexCenter } from 'styles/mixins';
 
 const getRotate = (isRotated, isRight) => {
   if (isRight) {
@@ -12,8 +13,16 @@ const getRotate = (isRotated, isRight) => {
   return !isRotated ? 'rotateZ(-20deg)' : 'rotateZ(20deg)';
 };
 
-const LineStyled = styled.button`
+const LineStyledWrapper = styled.button`
   ${resetButton};
+  ${flexCenter};
+
+  width: 10rem;
+  height: 2rem;
+`;
+
+const LineStyled = styled.div`
+  /* ${resetButton}; */
   width: 5rem;
   height: 0.5rem;
   background-color: ${colors.black};
@@ -25,7 +34,9 @@ const Line = ({ isRight }) => {
   const [isRotated, setIsRotated] = useState(false);
 
   return (
-    <LineStyled isRight={isRight} isRotated={isRotated} onClick={() => setIsRotated(!isRotated)} />
+    <LineStyledWrapper onClick={() => setIsRotated(!isRotated)}>
+      <LineStyled isRight={isRight} isRotated={isRotated} />
+    </LineStyledWrapper>
   );
 };
 
