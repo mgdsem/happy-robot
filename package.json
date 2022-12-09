@@ -30,7 +30,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "inline-svg-react": "^0.2.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^2.0.0",
